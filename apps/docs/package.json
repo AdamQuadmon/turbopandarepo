@@ -12,16 +12,16 @@
   "dependencies": {
     "@acme/core": "workspace:*",
     "@acme/utils": "workspace:*",
-    "next": "^13.4.1",
+    "next": "^13.4.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@acme/tsconfig": "workspace:*",
-    "@types/node": "^17.0.12",
-    "@types/react": "^18.0.22",
-    "@types/react-dom": "^18.0.7",
+    "@types/node": "^20.4.1",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
     "eslint-config-acme": "workspace:*",
-    "typescript": "^4.5.4"
+    "typescript": "^5.1.6"
   }
 }

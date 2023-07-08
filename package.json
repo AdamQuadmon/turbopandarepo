@@ -1,6 +1,13 @@
 {
+  "name": "@turbopandarepo/root",
+  "version": "0.0.0",
+  "description": "Turbo powered Monorepo featuring PandaCSS and Storybook with ESLint Flat Config",
+  "author": "Luciano Amodio <adamquadmon@gmail.com>",
+  "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "turbo build",
     "dev": "turbo dev --no-cache --continue",
     "lint": "turbo lint",
@@ -11,11 +18,11 @@
     "release": "turbo build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.22.0",
-    "eslint": "^7.32.0",
+    "@changesets/cli": "^2.26.2",
+    "eslint": "^8.44.0",
     "eslint-config-acme": "workspace:*",
-    "prettier": "^2.5.1",
+    "prettier": "^2.8.8",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@7.15.0"
+  "packageManager": "pnpm@8.6.6"
 }
