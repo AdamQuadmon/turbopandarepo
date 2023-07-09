@@ -1,4 +1,4 @@
-import { Button } from "@acme/core";
+import { Button } from "@turbopandarepo/core";
 
 export default function Page() {
   return (

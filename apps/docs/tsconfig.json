@@ -1,14 +1,7 @@
 {
-  "exclude": ["node_modules"],
-  "extends": "@acme/tsconfig/nextjs.json",
+  "extends": "@turbopandarepo/tsconfig/nextjs.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "outDir": "dist"
   },
   "include": ["src", "next-env.d.ts", ".next/types/**/*.ts"]
 }

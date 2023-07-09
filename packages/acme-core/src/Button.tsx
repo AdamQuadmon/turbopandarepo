@@ -1,11 +1,12 @@
-import * as React from "react";
+import type { ReactNode } from "react";
 
 export interface ButtonProps {
-  children: React.ReactNode;
+  className?: string;
+  children: ReactNode;
 }
 
-export function Button(props: ButtonProps) {
-  return <button>{props.children}</button>;
+export function Button({ className, children }: ButtonProps) {
+  return <button className={className}>{children}</button>;
 }
 
 Button.displayName = "Button";

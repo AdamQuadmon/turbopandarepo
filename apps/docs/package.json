@@ -1,27 +1,28 @@
 {
-  "name": "@acme/docs",
+  "name": "@turbopandarepo/docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
     "start": "next start ",
     "dev": "next dev -p 3002",
-    "lint": "next lint",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next"
+    "lint": "eslint \"**/*.ts*\"",
+    "clean": "rimraf .turbo node_modules .next"
   },
   "dependencies": {
-    "@acme/core": "workspace:*",
-    "@acme/utils": "workspace:*",
+    "@turbopandarepo/core": "workspace:*",
+    "@turbopandarepo/utils": "workspace:*",
     "next": "^13.4.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@acme/tsconfig": "workspace:*",
+    "@turbopandarepo/eslint-config": "workspace:*",
+    "@turbopandarepo/tsconfig": "workspace:*",
     "@types/node": "^20.4.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "eslint-config-acme": "workspace:*",
+    "eslint": "^8.44.0",
     "typescript": "^5.1.6"
   }
 }

@@ -1,14 +1,13 @@
-# Turborepo Design System starter with Changesets
+# Turbopandarepo
 
-This is an official React design system starter powered by Turborepo. Versioning and package publishing is handled by [Changesets](https://github.com/changesets/changesets) and fully automated with GitHub Actions.
+## Turborepo Design System starter with Changesets
 
-## Using this example
+This is a React design system based on the official starter powered by
+Turborepo.
 
-Run the following command:
-
-```sh
-npx create-turbo@latest -e with-changesets
-```
+Versioning and package publishing is handled by
+[Changesets](https://github.com/changesets/changesets) and fully automated with
+GitHub Actions.
 
 ## What's inside?
 
@@ -16,11 +15,13 @@ This Turborepo includes the following:
 
 ### Apps and Packages
 
-- `docs`: A placeholder documentation site powered by [Next.js](https://nextjs.org/)
-- `@acme/core`: core React components
-- `@acme/utils`: shared React utilities
-- `@acme/tsconfig`: shared `tsconfig.json`s used throughout the monorepo
-- `eslint-config-acme`: ESLint preset
+- `@turbopandarepo/docs`: A placeholder documentation site powered by
+  [Next.js](https://nextjs.org/)
+- `@turbopandarepo/ui`: UI React components
+- `@turbopandarepo/utils`: shared React utilities
+- `@turbopandarepo/tsconfig`: shared `tsconfig.json`s used throughout the
+  monorepo
+- `@turbopandarepo/eslint-config`: ESLint preset using **Flat Config**
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -29,38 +30,54 @@ Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 This Turborepo has some additional tools already setup for you:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
+- [ESLint](https://eslint.org/) for code linting using new
+  [Flat Config](https://eslint.org/blog/2022/08/new-config-system-part-2/)
 - [Prettier](https://prettier.io) for code formatting
 
 ### Useful commands
 
-- `yarn build` - Build all packages and the docs site
-- `yarn dev` - Develop all packages and the docs site
-- `yarn lint` - Lint all packages
-- `yarn changeset` - Generate a changeset
-- `yarn clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
+- `pnpm build` - Build all packages and the docs site
+- `pnpm dev` - Develop all packages and the docs site
+- `pnpm lint` - Lint all packages
+- `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each
+  package's clean script)
+- `pnpm reinstall` - Clean and reinstall packages building @turbopandarepo/core
+- `pnpm reinstall:lint` - Reinstall and lint shortcut
+- `pnpm reinstall:dev` - Reinstall and dev shortcut
+- `pnpm format` - Use Prettier\*\* to format .ts, .tsx and .nd files
+- `pnpm changeset` - Generate a changeset
+- `pnpm version-packages` - Generate a changeset and bump all packages
+- `pnpm release` - Build docs and publish packages to npm
 
-### Changing the npm organization scope
+\*Note on `reinstall` Without building @turbopandarepo/core imports will not
+work in @turbopandarepo/docs
 
-The npm organization scope for this design system starter is `@acme`. To change this, it's a bit manual at the moment, but you'll need to do the following:
-
-- Rename folders in `packages/*` to replace `acme` with your desired scope
-- Search and replace `acme` with your desired scope
-- Re-run `yarn install`
+\*\*Note on `format` Maybe will be better to just use ESLint `--fix` flag
 
 ## Versioning and Publishing packages
 
-Package publishing has been configured using [Changesets](https://github.com/changesets/changesets). Please review their [documentation](https://github.com/changesets/changesets#documentation) to familiarize yourself with the workflow.
+Package publishing has been configured using
+[Changesets](https://github.com/changesets/changesets). Please review their
+[documentation](https://github.com/changesets/changesets#documentation) to
+familiarize yourself with the workflow.
 
-This example comes with automated npm releases setup in a [GitHub Action](https://github.com/changesets/action). To get this working, you will need to create an `NPM_TOKEN` and `GITHUB_TOKEN` in your repository settings. You should also install the [Changesets bot](https://github.com/apps/changeset-bot) on your GitHub repository as well.
+This example comes with automated npm releases setup in a
+[GitHub Action](https://github.com/changesets/action). To get this working, you
+will need to create an `NPM_TOKEN` and `GITHUB_TOKEN` in your repository
+settings. You should also install the
+[Changesets bot](https://github.com/apps/changeset-bot) on your GitHub
+repository as well.
 
-For more information about this automation, refer to the official [changesets documentation](https://github.com/changesets/changesets/blob/main/docs/automating-changesets.md)
+For more information about this automation, refer to the official
+[changesets documentation](https://github.com/changesets/changesets/blob/main/docs/automating-changesets.md)
 
 ### npm
 
-If you want to publish package to the public npm registry and make them publicly available, this is already setup.
+If you want to publish package to the public npm registry and make them publicly
+available, this is already setup.
 
-To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
+To publish packages to a private npm organization scope, **remove** the
+following from each of the `package.json`'s
 
 ```diff
 - "publishConfig": {
@@ -70,4 +87,5 @@ To publish packages to a private npm organization scope, **remove** the followin
 
 ### GitHub Package Registry
 
-See [Working with the npm registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-a-package-using-publishconfig-in-the-packagejson-file)
+See
+[Working with the npm registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-a-package-using-publishconfig-in-the-packagejson-file)

@@ -1,26 +1,22 @@
 {
-  "name": "@acme/core",
+  "name": "@turbopandarepo/core",
   "version": "0.0.0",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "type": "module",
+  "main": "src/index.tsx",
+  "types": "src/index.tsx",
   "sideEffects": false,
   "license": "MIT",
-  "files": [
-    "dist/**"
-  ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "lint": "eslint \"src/**/*.ts*\"",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rimraf .turbo node_modules dist",
+    "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
-    "@acme/tsconfig": "workspace:*",
+    "@turbopandarepo/tsconfig": "workspace:*",
+    "@turbopandarepo/eslint-config": "workspace:*",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "eslint": "^8.44.0",
-    "eslint-config-acme": "workspace:*",
     "react": "^18.2.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6"

@@ -8,20 +8,25 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm add rimraf -g",
     "build": "turbo build",
     "dev": "turbo dev --no-cache --continue",
     "lint": "turbo lint",
-    "clean": "turbo clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "turbo clean && turbo daemon clean && rimraf node_modules",
+    "reinstall": "pnpm clean && pnpm install && pnpm build --filter core",
+    "reinstall:lint": "pnpm reinstall && pnpm lint",
+    "reinstall:dev": "pnpm reinstall && pnpm dev",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,ts,tsx,md,json}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
+    "@turbopandarepo/tsconfig": "workspace:*",
     "@changesets/cli": "^2.26.2",
+    "@turbopandarepo/eslint-config": "workspace:*",
     "eslint": "^8.44.0",
-    "eslint-config-acme": "workspace:*",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.6.6"
