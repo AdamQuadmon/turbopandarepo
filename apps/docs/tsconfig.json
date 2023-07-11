@@ -3,5 +3,11 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src", "next-env.d.ts", ".next/types/**/*.ts"]
+  "include": [
+    "src",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "styled-system",
+    "panda.config.ts"
+  ]
 }
