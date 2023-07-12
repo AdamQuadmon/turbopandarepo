@@ -3,17 +3,17 @@ import prettierConfig from "eslint-config-prettier";
 import reactJsxRecommended from "eslint-plugin-react/configs/jsx-runtime.js";
 import reactRecommended from "eslint-plugin-react/configs/recommended.js";
 
-import importConfig from "./configs/import.js";
-import reactConfig from "./configs/react.js";
-import typescriptConfig from "./configs/typescript.js";
+import importConfigs from "./configs/import.js";
+import reactConfigs from "./configs/react.js";
+import typescriptConfigs from "./configs/typescript.js";
 
 const config = [
   eslint.configs.recommended,
-  typescriptConfig,
-  importConfig,
+  ...typescriptConfigs,
+  ...importConfigs,
   reactRecommended,
   reactJsxRecommended,
-  reactConfig,
+  ...reactConfigs,
   prettierConfig,
 ];
 

@@ -10,32 +10,34 @@ import reactRules from "../rules/react.js";
 
 const files = ["**/*.{js,ts,tsx}"];
 
-const reactConfig = {
-  files,
-  plugins: {
-    "react-hooks": reactHooks,
-    "react-refresh": reactRefresh,
-    "jsx-a11y": jsxA11y,
-    "@next/next": next,
-    turbo,
-  },
-  settings: {
-    next: {
-      rootDir: ["apps/*/"],
+const reactConfigs = [
+  {
+    files,
+    plugins: {
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+      "jsx-a11y": jsxA11y,
+      "@next/next": next,
+      turbo,
     },
-    react: {
-      version: "detect",
+    settings: {
+      next: {
+        rootDir: ["apps/*/"],
+      },
+      react: {
+        version: "detect",
+      },
+    },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      ...jsxA11y.configs.recommended.rules,
+      ...next.configs["core-web-vitals"].rules,
+      ...turbo.configs.recommended.rules,
+      ...reactRules.recommended,
+      ...jsxRules.recommended,
+      ...nextRules.recommended,
     },
   },
-  rules: {
-    ...reactHooks.configs.recommended.rules,
-    ...jsxA11y.configs.recommended.rules,
-    ...next.configs["core-web-vitals"].rules,
-    ...turbo.configs.recommended.rules,
-    ...reactRules,
-    ...jsxRules,
-    ...nextRules,
-  },
-};
+];
 
-export default reactConfig;
+export default reactConfigs;

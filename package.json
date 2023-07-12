@@ -13,7 +13,7 @@
     "dev": "turbo dev --no-cache --continue",
     "lint": "turbo lint",
     "clean": "turbo clean && turbo daemon clean && rimraf node_modules",
-    "reinstall": "pnpm clean && pnpm install && pnpm build --filter core",
+    "reinstall": "pnpm clean && pnpm install",
     "reinstall:lint": "pnpm reinstall && pnpm lint",
     "reinstall:dev": "pnpm reinstall && pnpm dev",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{js,ts,tsx,md,json}\"",
@@ -22,9 +22,9 @@
     "release": "turbo build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
-    "@turbopandarepo/tsconfig": "workspace:*",
     "@changesets/cli": "^2.26.2",
     "@turbopandarepo/eslint-config": "workspace:*",
+    "@turbopandarepo/tsconfig": "workspace:*",
     "eslint": "^8.44.0",
     "prettier": "^3.0.0",
     "turbo": "latest"

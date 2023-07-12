@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen --clean",
-    "build": "next build",
+    "build:next": "next build",
     "start": "next start ",
-    "dev": "rimraf .next && next dev -p 3002",
+    "dev:next": "rimraf .next && next dev -p 3002",
     "lint": "eslint \"**/*.ts*\"",
-    "clean": "rimraf .turbo node_modules .next styled-system"
+    "clean": "rimraf .turbo node_modules .next styled-system storybook-static",
+    "dev": "rimraf .next && storybook dev -p 6006",
+    "build": "storybook build"
   },
   "dependencies": {
     "@turbopandarepo/core": "workspace:*",
@@ -19,12 +21,22 @@
   },
   "devDependencies": {
     "@pandacss/dev": "^0.6.0",
+    "@storybook/addon-essentials": "7.1.0-beta.3",
+    "@storybook/addon-interactions": "7.1.0-beta.3",
+    "@storybook/addon-links": "7.1.0-beta.3",
+    "@storybook/blocks": "7.1.0-beta.3",
+    "@storybook/cli": "^7.1.0-beta.3",
+    "@storybook/nextjs": "7.1.0-beta.3",
+    "@storybook/react": "7.1.0-beta.3",
+    "@storybook/testing-library": "0.0.14-next.2",
     "@turbopandarepo/eslint-config": "workspace:*",
     "@turbopandarepo/tsconfig": "workspace:*",
     "@types/node": "^20.4.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "eslint": "^8.44.0",
+    "eslint-plugin-storybook": "^0.6.12",
+    "storybook": "7.1.0-beta.3",
     "typescript": "^5.1.6"
   }
 }

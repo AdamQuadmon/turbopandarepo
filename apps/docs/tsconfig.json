@@ -4,7 +4,8 @@
     "outDir": "dist"
   },
   "include": [
-    "src",
+    "src/**/*.ts*",
+    ".storybook/**/*.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "styled-system",
