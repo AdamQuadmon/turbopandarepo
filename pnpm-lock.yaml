@@ -19,7 +19,7 @@ importers:
         version: link:packages/eslint-config
       '@turbopandarepo/tsconfig':
         specifier: workspace:*
-        version: link:packages/acme-tsconfig
+        version: link:packages/tsconfig
       eslint:
         specifier: ^8.44.0
         version: 8.44.0
@@ -32,12 +32,12 @@ importers:
 
   apps/docs:
     dependencies:
-      '@turbopandarepo/core':
+      '@turbopandarepo/ui':
         specifier: workspace:*
-        version: link:../../packages/acme-core
+        version: link:../../packages/ui
       '@turbopandarepo/utils':
         specifier: workspace:*
-        version: link:../../packages/acme-utils
+        version: link:../../packages/utils
       next:
         specifier: ^13.4.9
         version: 13.4.9(@babel/core@7.22.8)(react-dom@18.2.0)(react@18.2.0)
@@ -80,7 +80,7 @@ importers:
         version: link:../../packages/eslint-config
       '@turbopandarepo/tsconfig':
         specifier: workspace:*
-        version: link:../../packages/acme-tsconfig
+        version: link:../../packages/tsconfig
       '@types/node':
         specifier: ^20.4.1
         version: 20.4.1
@@ -99,62 +99,6 @@ importers:
       storybook:
         specifier: 7.1.0-beta.3
         version: 7.1.0-beta.3
-      typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
-
-  packages/acme-core:
-    devDependencies:
-      '@turbopandarepo/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@turbopandarepo/tsconfig':
-        specifier: workspace:*
-        version: link:../acme-tsconfig
-      '@types/react':
-        specifier: ^18.2.14
-        version: 18.2.14
-      '@types/react-dom':
-        specifier: ^18.2.6
-        version: 18.2.6
-      eslint:
-        specifier: ^8.44.0
-        version: 8.44.0
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      tsup:
-        specifier: ^7.1.0
-        version: 7.1.0(typescript@5.1.6)
-      typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
-
-  packages/acme-tsconfig: {}
-
-  packages/acme-utils:
-    devDependencies:
-      '@turbopandarepo/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@turbopandarepo/tsconfig':
-        specifier: workspace:*
-        version: link:../acme-tsconfig
-      '@types/react':
-        specifier: ^18.2.14
-        version: 18.2.14
-      '@types/react-dom':
-        specifier: ^18.2.6
-        version: 18.2.6
-      eslint:
-        specifier: ^8.44.0
-        version: 8.44.0
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      tsup:
-        specifier: ^7.1.0
-        version: 7.1.0(typescript@5.1.6)
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
@@ -203,6 +147,89 @@ importers:
       eslint-plugin-turbo:
         specifier: ^1.10.7
         version: 1.10.7(eslint@8.44.0)
+
+  packages/preset:
+    devDependencies:
+      '@turbopandarepo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@turbopandarepo/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^18.2.14
+        version: 18.2.14
+      '@types/react-dom':
+        specifier: ^18.2.6
+        version: 18.2.6
+      eslint:
+        specifier: ^8.44.0
+        version: 8.44.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      tsup:
+        specifier: ^7.1.0
+        version: 7.1.0(typescript@5.1.6)
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
+
+  packages/tsconfig: {}
+
+  packages/ui:
+    devDependencies:
+      '@turbopandarepo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@turbopandarepo/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^18.2.14
+        version: 18.2.14
+      '@types/react-dom':
+        specifier: ^18.2.6
+        version: 18.2.6
+      eslint:
+        specifier: ^8.44.0
+        version: 8.44.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      tsup:
+        specifier: ^7.1.0
+        version: 7.1.0(typescript@5.1.6)
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
+
+  packages/utils:
+    devDependencies:
+      '@turbopandarepo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@turbopandarepo/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/react':
+        specifier: ^18.2.14
+        version: 18.2.14
+      '@types/react-dom':
+        specifier: ^18.2.6
+        version: 18.2.6
+      eslint:
+        specifier: ^8.44.0
+        version: 8.44.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      tsup:
+        specifier: ^7.1.0
+        version: 7.1.0(typescript@5.1.6)
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
 
 packages:
 

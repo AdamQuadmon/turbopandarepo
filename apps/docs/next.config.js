@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   // experimental: { esmExternals: "loose" },
-  transpilePackages: ["@turbopandarepo/core"],
+  transpilePackages: ["@turbopandarepo/ui"],
 };
 // eslint-disable-next-line no-undef
 module.exports = nextConfig;

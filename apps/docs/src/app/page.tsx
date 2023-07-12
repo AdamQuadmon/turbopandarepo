@@ -1,4 +1,4 @@
-import { Button } from "@turbopandarepo/core";
+import { Button } from "@turbopandarepo/ui";
 
 import { css } from "../../styled-system/css";
 

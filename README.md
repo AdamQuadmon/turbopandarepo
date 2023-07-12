@@ -41,18 +41,13 @@ This Turborepo has some additional tools already setup for you:
 - `pnpm lint` - Lint all packages
 - `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each
   package's clean script)
-- `pnpm reinstall` - Clean and reinstall packages building @turbopandarepo/core
+- `pnpm reinstall` - Clean and reinstall packages
 - `pnpm reinstall:lint` - Reinstall and lint shortcut
 - `pnpm reinstall:dev` - Reinstall and dev shortcut
-- `pnpm format` - Use Prettier\*\* to format .ts, .tsx and .nd files
+- `pnpm format` - Use Prettier to format .ts, .tsx and .nd files
 - `pnpm changeset` - Generate a changeset
 - `pnpm version-packages` - Generate a changeset and bump all packages
 - `pnpm release` - Build docs and publish packages to npm
-
-\*Note on `reinstall` Without building @turbopandarepo/core imports will not
-work in @turbopandarepo/docs
-
-\*\*Note on `format` Maybe will be better to just use ESLint `--fix` flag
 
 ## Versioning and Publishing packages
 

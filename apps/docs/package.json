@@ -13,7 +13,7 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "@turbopandarepo/core": "workspace:*",
+    "@turbopandarepo/ui": "workspace:*",
     "@turbopandarepo/utils": "workspace:*",
     "next": "^13.4.9",
     "react": "^18.2.0",
