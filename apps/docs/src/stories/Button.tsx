@@ -1,18 +1,11 @@
-import "./button.css";
+import { cva } from "../../styled-system/css";
 
 interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
+  variant?: "primary" | "secondary";
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large";
+  size?: "sm" | "md" | "lg";
   /**
    * Button contents
    */
@@ -27,29 +20,46 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
   label,
+  variant = "secondary",
+  size = "md",
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
   return (
     <button
       type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
+      className={buttonRecipe({ variant, size })}
       {...props}
     >
       {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
     </button>
   );
 };
+
+const buttonRecipe = cva({
+  base: {
+    fontFamily: "'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    fontWeight: "700",
+    cursor: "pointer",
+    color: "stone.800",
+    bg: "stone.50",
+    lineHeight: "1",
+    borderRadius: "lg",
+    _hover: { bg: "red.400" },
+  },
+  variants: {
+    variant: {
+      primary: { color: "stone.100", bg: "blue.500" },
+      secondary: {
+        color: "stone.800",
+        bg: "stone.100",
+        boxShadow: "rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset",
+      },
+    },
+    size: {
+      sm: { padding: "2", fontSize: "sm" },
+      md: { padding: "4", fontSize: "md" },
+      lg: { padding: "6", fontSize: "lg" },
+    },
+  },
+});
