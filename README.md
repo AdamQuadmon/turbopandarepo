@@ -2,8 +2,16 @@
 
 ## Turborepo Design System starter with Changesets
 
-This is a React design system based on the official starter powered by
-Turborepo.
+This is a 🐼 PandaCSS powered React design system based on the official
+Turborepo starter.
+
+### HighLights
+
+- rimraf for cross platform `rm -rf` functionality
+- ESLint new Flat Config with configs and rules
+- NextJs based Storybook with PandaCSS and presets
+- Ui components package with PandaCSS
+- PandaCSS preset package
 
 Versioning and package publishing is handled by
 [Changesets](https://github.com/changesets/changesets) and fully automated with
@@ -15,13 +23,14 @@ This Turborepo includes the following:
 
 ### Apps and Packages
 
-- `@turbopandarepo/docs`: A placeholder documentation site powered by
+- `@turbopandarepo/docs`: A Storybook documentation site powered by
   [Next.js](https://nextjs.org/)
-- `@turbopandarepo/ui`: UI React components
-- `@turbopandarepo/utils`: shared React utilities
-- `@turbopandarepo/tsconfig`: shared `tsconfig.json`s used throughout the
-  monorepo
 - `@turbopandarepo/eslint-config`: ESLint preset using **Flat Config**
+- `@turbopandarepo/preset`: PandaCSS custom preset
+- `@turbopandarepo/tsconfig`: Shared `tsconfig.json`s used throughout the
+  monorepo
+- `@turbopandarepo/ui`: Shared React UI components
+- `@turbopandarepo/utils`: Shared React utilities
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 

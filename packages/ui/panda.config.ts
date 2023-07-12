@@ -9,11 +9,7 @@ export default defineConfig({
   preflight: true,
 
   // Where to look for your css declarations
-  include: [
-    "./node_modules/@turbopandarepo/ds/src/**/*.ts*",
-    "./node_modules/@turbopandarepo/ui/src/**/*.ts*",
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  include: ["./src/**/*.{js,jsx,ts,tsx}"],
 
   // Files to exclude
   exclude: [],

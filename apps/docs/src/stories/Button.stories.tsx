@@ -1,5 +1,5 @@
-import { Button } from "./Button";
-import { css } from "../../styled-system/css";
+import { css } from "@turbopandarepo/ds/css";
+import { Button } from "@turbopandarepo/ui";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

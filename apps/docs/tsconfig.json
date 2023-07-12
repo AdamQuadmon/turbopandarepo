@@ -8,7 +8,6 @@
     ".storybook/**/*.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts",
-    "styled-system",
     "panda.config.ts"
   ]
 }

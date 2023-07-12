@@ -7,11 +7,17 @@
   "sideEffects": false,
   "license": "MIT",
   "scripts": {
+    "prepare": "panda codegen --clean",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rimraf .turbo node_modules",
     "generate:component": "turbo gen react-component"
   },
+  "dependencies": {
+    "@pandacss/preset-panda": "^0.6.0",
+    "@turbopandarepo/preset": "workspace:*"
+  },
   "devDependencies": {
+    "@pandacss/dev": "^0.6.0",
     "@turbopandarepo/tsconfig": "workspace:*",
     "@turbopandarepo/eslint-config": "workspace:*",
     "@types/react": "^18.2.14",

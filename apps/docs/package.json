@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prepare": "panda codegen --clean",
+    "prepare": "panda codegen",
     "build:next": "next build",
     "start": "next start ",
     "dev:next": "rimraf .next && next dev -p 3002",
     "lint": "eslint \"**/*.ts*\"",
-    "clean": "rimraf .turbo node_modules .next styled-system storybook-static",
+    "clean": "rimraf .turbo node_modules .next storybook-static",
     "dev": "rimraf .next && storybook dev -p 6006",
     "build": "storybook build"
   },

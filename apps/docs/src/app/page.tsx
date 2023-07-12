@@ -1,6 +1,5 @@
+import { css } from "@turbopandarepo/ds/css";
 import { Button } from "@turbopandarepo/ui";
-
-import { css } from "../../styled-system/css";
 
 export default function Page() {
   return (
