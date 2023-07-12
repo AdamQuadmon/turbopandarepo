@@ -1,7 +1,7 @@
 import { cva } from "../../styled-system/css";
 
 interface ButtonProps {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "instagram" | "warning";
   /**
    * How large should the button be?
    */
@@ -50,6 +50,12 @@ const buttonRecipe = cva({
   variants: {
     variant: {
       primary: { color: "stone.100", bg: "blue.500" },
+      instagram: { color: "stone.100", bg: "instagram" },
+      warning: {
+        color: "text.warning",
+        bg: "background.warning",
+        _hover: { bg: "background.warning.hovered" },
+      },
       secondary: {
         color: "stone.800",
         bg: "stone.100",

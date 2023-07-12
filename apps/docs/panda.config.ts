@@ -1,6 +1,10 @@
 import { defineConfig } from "@pandacss/dev";
+import preset from "@pandacss/preset-panda";
+
+import presetPanda from "@turbopandarepo/preset";
 
 export default defineConfig({
+  presets: [presetPanda, preset],
   // Whether to use css reset
   preflight: true,
 

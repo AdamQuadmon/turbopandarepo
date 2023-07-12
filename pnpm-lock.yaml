@@ -32,6 +32,12 @@ importers:
 
   apps/docs:
     dependencies:
+      '@pandacss/preset-panda':
+        specifier: ^0.6.0
+        version: 0.6.0
+      '@turbopandarepo/preset':
+        specifier: workspace:*
+        version: link:../../packages/preset
       '@turbopandarepo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -149,6 +155,10 @@ importers:
         version: 1.10.7(eslint@8.44.0)
 
   packages/preset:
+    dependencies:
+      '@pandacss/types':
+        specifier: ^0.6.0
+        version: 0.6.0
     devDependencies:
       '@turbopandarepo/eslint-config':
         specifier: workspace:*
@@ -156,21 +166,9 @@ importers:
       '@turbopandarepo/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
-      '@types/react':
-        specifier: ^18.2.14
-        version: 18.2.14
-      '@types/react-dom':
-        specifier: ^18.2.6
-        version: 18.2.6
       eslint:
         specifier: ^8.44.0
         version: 8.44.0
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      tsup:
-        specifier: ^7.1.0
-        version: 7.1.0(typescript@5.1.6)
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
@@ -3039,7 +3037,6 @@ packages:
     resolution: {integrity: sha512-C+bZHd3jdRQXHa3Gk6z/eQDTWyJZVK9Rwb/VPA4LmEQrMBvDbfnKRaWVe2dZ3RTQzyhDGlVlMK0RlTGRatuIow==}
     dependencies:
       '@pandacss/types': 0.6.0
-    dev: true
 
   /@pandacss/shared@0.6.0:
     resolution: {integrity: sha512-KBURQaia3gG4CERSHfdNi7b4y6rg7ELPGq/vjDo59MRkk5PzzLZTf0l34dHf6NCjpL3xCyylnbNAMHfobPqGfQ==}
@@ -3088,7 +3085,6 @@ packages:
 
   /@pandacss/types@0.6.0:
     resolution: {integrity: sha512-KHaBH9eBj5VWrUJstUzj1T1ckfwSBQ50hj4PjOBu8sEDK5yIAPgg7J1hm2H0ytm0RsP7iAfarebxgmJYxpSPIA==}
-    dev: true
 
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
