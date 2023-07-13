@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"src/**/*.ts*\"",
-    "clean": "rimraf .turbo node_modules dist"
+    "clean": "rimraf .turbo node_modules"
   },
   "devDependencies": {
     "@turbopandarepo/eslint-config": "workspace:*",

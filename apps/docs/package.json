@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen",
-    "build:next": "next build",
+    "build": "next build",
     "start": "next start ",
-    "dev:next": "rimraf .next && next dev -p 3002",
+    "dev": "rimraf .next && next dev -p 3002",
     "lint": "eslint \"**/*.ts*\"",
-    "clean": "rimraf .turbo node_modules .next storybook-static",
-    "dev": "rimraf .next && storybook dev -p 6006",
-    "build": "storybook build"
+    "storybook:dev": "rimraf .next && storybook dev -p 6006",
+    "storybook:build": "storybook build --quiet",
+    "storybook:move": "mv storybook-static ../../storybook-static"
   },
   "dependencies": {
     "@pandacss/preset-panda": "^0.6.0",

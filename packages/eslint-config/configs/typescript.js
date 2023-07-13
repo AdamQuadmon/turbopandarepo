@@ -15,7 +15,9 @@ const typescriptConfigs = [
     plugins: {
       "@typescript-eslint": tsc,
     },
-
+    env: {
+      node: true,
+    },
     rules: {
       ...tsc.configs["eslint-recommended"].rules,
       ...tsc.configs.recommended.rules,

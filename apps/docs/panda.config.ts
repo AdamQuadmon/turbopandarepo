@@ -12,6 +12,10 @@ export default defineConfig({
   include: [
     "./node_modules/@turbopandarepo/ds/src/**/*.ts*",
     "./node_modules/@turbopandarepo/ui/src/**/*.ts*",
+    // "./node_modules/@turbopandarepo/preset/src/**/*.ts*",
+    // using this instead will trigger a refresh when the preset is changed
+    // but the style is not updated
+    "../../packages/preset/src/**/*.ts*",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
 
@@ -22,7 +26,24 @@ export default defineConfig({
   theme: {
     extend: {},
   },
-
+  hooks: {
+    "config:resolved": (conf) => {
+      // console.log(JSON.stringify(conf, null, 5));
+      console.log("🐼 config:resolve");
+    },
+    "config:change": (conf) => {
+      console.log(
+        "🐼 config:change",
+        JSON.stringify(conf?.theme?.recipes, null, 5)
+      );
+    },
+    "parser:before": (file, _content) => {
+      console.log("🐼 parser:before", file);
+    },
+    "generator:css": (file, _css) => {
+      console.log("🐼 generator:css", file);
+    },
+  },
   // The output directory for your css system
   outdir: "@turbopandarepo/ds",
   // https://panda-docs.vercel.app/docs/guides/component-library#use-panda-as-external-package

@@ -1,5 +1,4 @@
 {
   "extends": "@turbopandarepo/tsconfig/react-library.json",
-  "include": ["."],
-  "exclude": ["node_modules"]
+  "include": [".", "panda.config.ts"]
 }

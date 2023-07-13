@@ -3,6 +3,8 @@ import preset from "@pandacss/preset-panda";
 
 import presetPanda from "@turbopandarepo/preset";
 
+import type { Config } from "@pandacss/types";
+
 export default defineConfig({
   presets: [presetPanda, preset],
   // Whether to use css reset
@@ -23,4 +25,4 @@ export default defineConfig({
   outdir: "@turbopandarepo/ds",
   // https://panda-docs.vercel.app/docs/guides/component-library#use-panda-as-external-package
   emitPackage: true,
-});
+} as Config);
