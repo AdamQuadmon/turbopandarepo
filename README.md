@@ -86,7 +86,8 @@ alone.
 This implementation has still some issues:
 
 - [ ] **changes** in package **recipes** are not reflected in Storybook until
-      restart as `config:change` is not triggered
+      restart, even if `config:change` is triggered by touching panda.config, it
+      still reads the old config until storybook restart
 - [ ] **only declared styles** are available in Storybook (check warning
       variant, uncomment warning button on page.tsx to see how Storybook
       refreshes including the missing styles)
