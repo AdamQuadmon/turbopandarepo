@@ -37,7 +37,7 @@ export default defineConfig({
     "config:change": (conf) => {
       console.log(
         "🐼 config:change",
-        JSON.stringify(conf?.theme?.recipes, null, 5)
+        JSON.stringify(conf?.theme?.recipes, null, 5),
       );
     },
     "parser:before": (file, _content) => {

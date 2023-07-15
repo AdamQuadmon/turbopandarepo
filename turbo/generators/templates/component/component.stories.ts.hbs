@@ -1,0 +1,18 @@
+import { {{pascalCase name}} } from "@turbopandarepo/ui";
+
+import type { Meta, StoryObj } from "@storybook/react";
+
+const meta: Meta<typeof {{pascalCase name}}> = {
+  title: "Example/{{pascalCase name}}",
+  component: {{pascalCase name}},
+  tags: ["autodocs"]
+};
+
+export default meta;
+type Story = StoryObj<typeof {{pascalCase name}}>;
+
+export const Default: Story = {
+  args: {
+
+  },
+};

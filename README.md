@@ -90,7 +90,8 @@ This implementation has still some issues:
       still reads the old config until storybook restart
 - [ ] **only declared styles** are available in Storybook (check warning
       variant, uncomment warning button on page.tsx to see how Storybook
-      refreshes including the missing styles)
+      refreshes including the missing styles), maybe this can help
+      [Static CSS Generator: Recipes](https://panda-css.com/docs/guides/static#generating-recipes)
 - [ ] **\_hover** condition style in base button is **not inherited** by
       variants (maybe not a bug)
 - [ ] missing a **Control field transformer** for **ConditionalValue** (see
@@ -100,6 +101,29 @@ This implementation has still some issues:
 
 - develop recipes using **CVA** then move to preset package
 - explicitly **declare all variants** in the story
+
+## Generators
+
+Turborepo uses a simplified [Plop](https://plopjs.com/documentation/)
+configuration.
+
+Learn more about Turborepo Generators at
+[turbo: code-generation](https://turbo.build/repo/docs/core-concepts/monorepos/code-generation)
+Check also
+[blog post generator](https://github.com/vercel/turbo/tree/main/docs/turbo/generators)
+
+### Generate Component
+
+A `pnpm gen:component` command is available to generate a new component from the
+root. It will generate:
+
+- a `ComponentName` folder for the new component in the **ui** package with
+  component and index files
+- an entry in the index.ts file of the **ui** package
+- a `ComponentName.stories.tsx` file in the **docs** package
+- a `component.recipe` file in the **preset** package
+
+````bash
 
 ## Versioning and Publishing packages
 
@@ -130,7 +154,7 @@ following from each of the `package.json`'s
 - "publishConfig": {
 -  "access": "public"
 - },
-```
+````
 
 ### GitHub Package Registry
 

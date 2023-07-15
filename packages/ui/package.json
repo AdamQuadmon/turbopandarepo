@@ -1,16 +1,14 @@
 {
   "name": "@turbopandarepo/ui",
   "version": "0.0.0",
-  "type": "module",
   "main": "src/index.tsx",
   "types": "src/index.tsx",
   "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "prepare": "panda codegen",
-    "lint": "eslint \"src/**/*.ts*\"",
-    "clean": "rimraf .turbo node_modules",
-    "generate:component": "turbo gen react-component"
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "clean": "rimraf .turbo node_modules"
   },
   "dependencies": {
     "@pandacss/preset-panda": "^0.6.0",

@@ -9,8 +9,6 @@ export const buttonRecipe = defineRecipe({
     fontFamily: "'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif",
     fontWeight: "700",
     cursor: "pointer",
-    color: "stone.800",
-    bg: "stone.50",
     lineHeight: "1",
     borderRadius: "lg",
     _hover: { bg: "red.400" },
@@ -18,6 +16,7 @@ export const buttonRecipe = defineRecipe({
   compoundVariants: [],
   variants: {
     variant: {
+      main: { color: "stone.800", bg: "stone.50" },
       primary: { color: "stone.100", bg: "green.500" },
       instagram: { color: "stone.100", bg: "instagram" },
       warning: {

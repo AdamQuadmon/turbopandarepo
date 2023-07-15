@@ -5,7 +5,6 @@
   "author": "Luciano Amodio <adamquadmon@gmail.com>",
   "license": "MIT",
   "private": true,
-  "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "postinstall": "pnpm add rimraf -g",
@@ -22,6 +21,7 @@
     "reinstall:dev": "pnpm reinstall && pnpm dev",
     "reinstall:dev:storybook": "pnpm reinstall && pnpm storybook:dev",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{js,ts,tsx,md,json}\"",
+    "gen:component": "turbo gen add-component && turbo run prepare",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo build --filter=docs^... && changeset publish"

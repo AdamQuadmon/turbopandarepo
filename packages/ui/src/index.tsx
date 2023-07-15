@@ -1,1 +1,3 @@
-export { Button, type ButtonProps } from "./Button";
+export * from "./button";
+export * from "./page";
+export * from "./header";

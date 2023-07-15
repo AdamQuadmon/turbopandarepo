@@ -1,4 +1,4 @@
-import { Header } from "./Header";
+import { Header } from "@turbopandarepo/ui";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

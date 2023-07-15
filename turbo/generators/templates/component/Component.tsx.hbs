@@ -1,0 +1,24 @@
+import type { PropsWithChildren } from "react";
+
+import { {{kebabCase name}} } from "@turbopandarepo/ds/recipes";
+import type { {{pascalCase name}}VariantProps } from "@turbopandarepo/ds/recipes";
+
+export interface {{pascalCase name}}Props
+  extends {{pascalCase name}}VariantProps,
+    PropsWithChildren {}
+
+export const {{pascalCase name}} = ({
+    variant = "main",
+    size = "md",
+    children,
+    ...props
+  }: {{pascalCase name}}Props
+) => {
+  return (
+    <div className={ {{kebabCase name}}({ variant, size }) } {...props}>
+      {children}
+    </div>
+  );
+};
+
+export { default } from './{{kebabCase name}}'

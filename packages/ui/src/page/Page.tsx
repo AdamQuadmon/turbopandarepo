@@ -1,18 +1,26 @@
+import type { PropsWithChildren } from "react";
 import { useState } from "react";
-import type { FC } from "react";
 
-import { Header } from "./Header";
-import "./page.css";
+import { page } from "@turbopandarepo/ds/recipes";
+import type { PageVariantProps } from "@turbopandarepo/ds/recipes";
+
+import { Header } from "../header";
 
 type User = {
   name: string;
 };
 
-export const Page: FC = () => {
-  const [user, setUser] = useState<User>();
+export interface PageProps extends PageVariantProps, PropsWithChildren {}
 
+export const Page = ({
+  variant = "main",
+  size = "md",
+  children,
+  ...props
+}: PageProps) => {
+  const [user, setUser] = useState<User>();
   return (
-    <article>
+    <article className={page({ variant, size })} {...props}>
       <Header
         user={user}
         onLogin={() => setUser({ name: "Jane Doe" })}
@@ -90,3 +98,5 @@ export const Page: FC = () => {
     </article>
   );
 };
+
+export default Page;

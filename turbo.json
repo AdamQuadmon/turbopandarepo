@@ -24,6 +24,9 @@
     "clean": {
       "cache": false
     },
+    "prepare": {
+      "cache": false
+    },
     "storybook:dev": {
       "cache": false
     },

@@ -1,6 +1,6 @@
 import { semanticColors } from "./colors/semantic";
 import { colors } from "./colors/socials";
-import { buttonRecipe } from "./recipes/button.recipe";
+import { recipes } from "./recipes";
 
 import type { Config } from "@pandacss/types";
 
@@ -10,15 +10,13 @@ const preset = definePreset({
   theme: {
     extend: {
       tokens: {
-        colors: colors,
+        colors,
       },
       semanticTokens: {
         colors: semanticColors,
       },
 
-      recipes: {
-        button: buttonRecipe,
-      },
+      recipes,
     },
   },
 });
