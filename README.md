@@ -8,16 +8,15 @@ system based on the official
 
 ### HighLights
 
-- Ui components package with **PandaCSS** (TODO: add
-  [Ark-UI](https://ark-ui.com/) & [Zag](https://zagjs.com/))
-- PandaCSS preset package (TODO: fix recipes)
+- Ui components package with **PandaCSS** [Park-UI](https://park-ui.com/) &
+  [Ark-UI](https://ark-ui.com/)
+- PandaCSS preset package
 - [Next.js](https://nextjs.org/) based [Storybook](https://storybook.js.org/)
 - **ESLint** new
   [Flat Config](https://eslint.org/blog/2022/08/new-config-system-part-2/) with
   configs and rules
 - [JoshuaKGoldberg/create-typescript-app](https://github.com/JoshuaKGoldberg/create-typescript-app)
-  for ESLint and TypeScript integration (waiting for Flat Config to become
-  stable)
+  for ESLint and TypeScript integration
 - **rimraf** for cross platform `rm -rf` functionality
 
 Versioning and package publishing is handled by
@@ -95,13 +94,7 @@ using the
 [Storybook Composition](https://storybook.js.org/docs/react/sharing/storybook-composition)
 feature.
 
-You can use `pnpm storybook:dev --filter=docs` to run a single Storybook (docs
-one in this example).
-
-Right now no other package has a Storybook to Compose as our UI and preset are
-build inside our docs app. But we are ready to compose a future website
-Storybook for example or a UI one if we want to build and release the UI package
-alone.
+You can use `pnpm storybook:dev` to run Storybook.
 
 ## Generators
 

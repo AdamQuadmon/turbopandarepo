@@ -17,8 +17,8 @@
 	},
 	"dependencies": {
 		"@icons-pack/react-simple-icons": "^9.0.1",
-		"@pandacss/preset-panda": "^0.15.1",
-		"@park-ui/presets": "^0.15.0",
+		"@pandacss/preset-panda": "^0.15.3",
+		"@park-ui/presets": "^0.16.0",
 		"@radix-ui/colors": "3.0.0-rc.5",
 		"@turbopandarepo/preset": "workspace:*",
 		"@turbopandarepo/ui": "workspace:*",
@@ -35,7 +35,7 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"@pandacss/dev": "^0.15.1",
+		"@pandacss/dev": "^0.15.3",
 		"@storybook/addon-essentials": "7.4.5",
 		"@storybook/addon-interactions": "7.4.5",
 		"@storybook/addon-links": "7.4.5",
@@ -44,11 +44,11 @@
 		"@storybook/testing-library": "0.2.1",
 		"@turbopandarepo/eslint-config": "workspace:*",
 		"@turbopandarepo/tsconfig": "workspace:*",
-		"@types/node": "^20.7.0",
+		"@types/node": "^20.7.1",
 		"@types/react": "^18.2.23",
-		"@types/react-dom": "^18.2.7",
+		"@types/react-dom": "^18.2.8",
 		"eslint": "^8.50.0",
-		"rimraf": "^5.0.4",
+		"rimraf": "^5.0.5",
 		"storybook": "7.4.5",
 		"typescript": "^5.2.2"
 	}

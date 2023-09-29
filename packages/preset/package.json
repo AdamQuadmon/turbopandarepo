@@ -17,15 +17,15 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
-		"@pandacss/dev": "^0.15.1",
-		"@pandacss/types": "^0.15.1",
+		"@pandacss/dev": "^0.15.3",
+		"@pandacss/types": "^0.15.3",
 		"@turbopandarepo/eslint-config": "workspace:*"
 	},
 	"devDependencies": {
 		"@turbopandarepo/tsconfig": "workspace:*",
 		"eslint": "^8.50.0",
 		"react": "^18.2.0",
-		"rimraf": "^5.0.4",
+		"rimraf": "^5.0.5",
 		"typescript": "^5.2.2"
 	}
 }

@@ -12,6 +12,8 @@ import { NavbarSidebar as BNavbarSidebar } from "./navbar-sidebar";
 import { NavbarSidebarContainer as BNavbarSidebarContainer } from "./navbar-sidebar-container";
 import { NavbarSidebarSwitch as BNavbarSidebarSwitch } from "./navbar-sidebar-switch";
 
+// see https://www.faststore.dev/components/organisms/navbar
+
 const { withContext, withProvider } = createStyleContext(navbar);
 
 export type NavbarProps = NavbarVariantProps & BNavbarProps;

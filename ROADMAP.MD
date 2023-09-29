@@ -19,7 +19,7 @@
   <https://github.com/storybookjs/storybook/issues/24070>
 - Knip postcss.config.cjs is detected as unused
   <https://github.com/webpro/knip/issues/256>
-- rimraf: removed postinstall add rimraf action seems to cause issues with
+- rimraf: removed "postinstall add rimraf" action seems to cause issues with
   reinstall action, maybe we should remove rimraf deps from packages to only
   rely on global installed one
 
@@ -32,17 +32,18 @@
 ### NextJs
 
 - check postcss.config.cjs extend for panda
-  <https://turbo.build/pack/docs/features/css#tailwind-css>
-  <https://panda-css.com/docs/installation/nextjs#install-panda-css>
-  <https://nextjs.org/docs/pages/building-your-application/configuring/post-css#customizing-plugins>
+  - <https://turbo.build/pack/docs/features/css#tailwind-css>
+  - <https://panda-css.com/docs/installation/nextjs#install-panda-css>
+  - <https://nextjs.org/docs/pages/building-your-application/configuring/post-css#customizing-plugins>
 
 ### ESLint Issues
 
-Recheck docs, try implement next lint
-<https://nextjs.org/docs/app/building-your-application/configuring/eslint>
-<https://turbo.build/repo/docs/handbook/linting/eslint>
+Recheck docs, try implement next lint:
 
-- package/tsconfig is not linted
+- <https://nextjs.org/docs/app/building-your-application/configuring/eslint>
+- <https://turbo.build/repo/docs/handbook/linting/eslint>
+
+- packages/tsconfig is not linted
 - check eslint entrypoint "." vs "src/\*_/_.ts\*"
 - check markdown line length, it's disabled by markdownlint/style/prettier, but
   it's disabled also in prettier, I had to add proseWrap: always
