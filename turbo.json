@@ -1,40 +1,40 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "globalEnv": ["NODE_ENV"],
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": [
-        "dist/**",
-        ".next/**",
-        "!.next/cache/**",
-        "storybook-static/**"
-      ]
-    },
-    "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": []
-    },
-    "lint": {},
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "clean": {
-      "cache": false
-    },
-    "prepare": {
-      "cache": false
-    },
-    "storybook:dev": {
-      "cache": false
-    },
-    "storybook:build": {
-      "outputs": ["storybook-static/**"]
-    },
-    "storybook:move": {
-      "cache": false
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"globalDependencies": ["**/.env.*local"],
+	"globalEnv": ["NODE_ENV"],
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": [
+				"dist/**",
+				".next/**",
+				"!.next/cache/**",
+				"storybook-static/**"
+			]
+		},
+		"test": {
+			"outputs": ["coverage/**"],
+			"dependsOn": []
+		},
+		"lint": {},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		},
+		"clean": {
+			"cache": false
+		},
+		"prepare": {
+			"cache": false
+		},
+		"storybook:dev": {
+			"cache": false
+		},
+		"storybook:build": {
+			"outputs": ["storybook-static/**"]
+		},
+		"storybook:move": {
+			"cache": false
+		}
+	}
 }

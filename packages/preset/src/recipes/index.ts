@@ -1,11 +1,9 @@
-// packages:
-import { pageRecipe } from "./page.recipe";
-import { buttonRecipe } from "./button.recipe";
-import { headerRecipe } from "./header.recipe";
+import { banner } from "./banner.recipe";
+import { callout } from "./callout.recipe";
+import { navbar } from "./navbar.recipe";
 
 export const recipes = {
-  // recipes:
-  page: pageRecipe,
-  button: buttonRecipe,
-  header: headerRecipe,
+	banner,
+	callout,
+	navbar,
 };

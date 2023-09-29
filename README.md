@@ -15,6 +15,9 @@ system based on the official
 - **ESLint** new
   [Flat Config](https://eslint.org/blog/2022/08/new-config-system-part-2/) with
   configs and rules
+- [JoshuaKGoldberg/create-typescript-app](https://github.com/JoshuaKGoldberg/create-typescript-app)
+  for ESLint and TypeScript integration (waiting for Flat Config to become
+  stable)
 - **rimraf** for cross platform `rm -rf` functionality
 
 Versioning and package publishing is handled by
@@ -33,28 +36,41 @@ This Turborepo includes the following:
 - `@turbopandarepo/tsconfig`: Shared `tsconfig.json`s used throughout the
   monorepo
 - `@turbopandarepo/ui`: Shared React UI components
-- `@turbopandarepo/utils`: Shared React utilities
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Useful commands
 
 - `pnpm build` - Build all packages and the docs site
-- `pnpm dev` - Develop all packages and the docs site
-- `pnpm lint` - Lint all packages
-- `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each
-  package's clean script)
+- `pnpm clean` - Clean up all `node_modules` and `dist` folders
 - `pnpm reinstall` - Clean and reinstall packages
-- `pnpm reinstall:lint` - Reinstall and lint shortcut
-- `pnpm reinstall:dev` - Reinstall and dev shortcut
-- `pnpm storybook:dev` - Develop Storybook for all packages
-- `pnpm storybook:build` - Build Storybook for all packages
+- `pnpm dev` - Develop all packages and the docs site
+- `pnpm storybook:dev` - Develop Storybook
+- `pnpm storybook:build` - Build Storybook
 - `pnpm storybook:move` - Move the built Storybooks to root
 - `pnpm storybook:vercel` - Vercel build command for Storybook
+- `pnpm lint` - Lint all packages
+- `pnpm lint:knip` - Lint unused code
+- `pnpm lint:md` - Lint Markdown files
+- `pnpm lint:package-json` - Lint package.json
+- `pnpm lint:packages` - Check if newer dependencies can be used in lockfile.
+- `pnpm lint:spelling` - Lint spelling
 - `pnpm format` - Use Prettier to format .ts, .tsx and .nd files
+- `pnpm format:write` - Write Prettier changes
 - `pnpm changeset` - Generate a changeset
 - `pnpm version-packages` - Generate a changeset and bump all packages
 - `pnpm release` - Build docs and publish packages to npm
+
+### Other commands
+
+- `pnpm up -L -r -i` - to interactively and recursively update dependencies to
+  latest versions
+- `pnpm add react --filter web` - to add a package to a specific workspace
+
+#### notes on adding a packages
+
+Running `pnpm add <pkg>`, if a `"prepare": "panda codegen"` fails, the package
+will not be added to package.json unless `--ignore-scripts` flag is provided
 
 ### Utilities
 
@@ -64,6 +80,12 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting using new
   [Flat Config](https://eslint.org/blog/2022/08/new-config-system-part-2/)
 - [Prettier](https://prettier.io) for code formatting
+- [cSpell](https://github.com/streetsidesoftware/cspell) for linting spelling
+- [Knip](https://github.com/webpro/knip) for unused code
+- [Markdownlint](https://github.com/DavidAnson/markdownlint) for linting
+  markdown
+- [Npm-package-json-lint](https://github.com/tclindner/npm-package-json-lint)
+  for linting package.json
 
 ## Storybook
 
@@ -80,27 +102,6 @@ Right now no other package has a Storybook to Compose as our UI and preset are
 build inside our docs app. But we are ready to compose a future website
 Storybook for example or a UI one if we want to build and release the UI package
 alone.
-
-## Storybook Issues
-
-This implementation has still some issues:
-
-- [ ] **changes** in package **recipes** are not reflected in Storybook until
-      restart, even if `config:change` is triggered by touching panda.config, it
-      still reads the old config until storybook restart
-- [ ] **only declared styles** are available in Storybook (check warning
-      variant, uncomment warning button on page.tsx to see how Storybook
-      refreshes including the missing styles), maybe this can help
-      [Static CSS Generator: Recipes](https://panda-css.com/docs/guides/static#generating-recipes)
-- [ ] **\_hover** condition style in base button is **not inherited** by
-      variants (maybe not a bug)
-- [ ] missing a **Control field transformer** for **ConditionalValue** (see
-      Button.stories.tsx variant and size example)
-
-### Workarounds
-
-- develop recipes using **CVA** then move to preset package
-- explicitly **declare all variants** in the story
 
 ## Generators
 
@@ -122,8 +123,6 @@ root. It will generate:
 - an entry in the index.ts file of the **ui** package
 - a `ComponentName.stories.tsx` file in the **docs** package
 - a `component.recipe` file in the **preset** package
-
-````bash
 
 ## Versioning and Publishing packages
 
@@ -154,7 +153,7 @@ following from each of the `package.json`'s
 - "publishConfig": {
 -  "access": "public"
 - },
-````
+```
 
 ### GitHub Package Registry
 

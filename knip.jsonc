@@ -1,0 +1,36 @@
+{
+	"$schema": "https://unpkg.com/knip@latest/schema.json",
+	"workspaces": {
+		".": {
+			"entry": "turbo/*.js",
+			"project": "turbo/**/*.js"
+		},
+		"apps/docs": {
+			"entry": ["src/{index,cli}.ts", "panda.config.ts"],
+			"project": "**/*.ts"
+		},
+		"packages/*": {
+			"entry": ["src/{index,cli}.ts", "panda.config.ts"],
+			"project": "**/*.ts"
+		},
+		"packages/eslint-config": {
+			"entry": "index.js",
+			"ignoreDependencies": ["react"]
+		},
+		"packages/tsconfig": {
+			"ignoreDependencies": ["react"]
+		}
+	},
+	"ignore": ["**/*.d.ts"],
+	"ignoreDependencies": [
+		"@park-ui/presets",
+		"@pandacss/preset-panda",
+		"panda-transitions-css",
+		"animated-pandacss",
+		"@turbo/gen",
+		"@turbopandarepo/ds",
+		"sentences-per-line"
+	],
+	"ignoreBinaries": ["gh", "only-allow"],
+	"ignoreExportsUsedInFile": true
+}

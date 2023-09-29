@@ -3,11 +3,11 @@ import type { RecipeConfig } from "@pandacss/types";
 const defineRecipe = <T extends RecipeConfig>(config: T) => config;
 
 export const {{camelCase name}}Recipe = defineRecipe({
-  name: "{{camelCase name}}",
-  jsx: ["{{pascalCase name}}"],
+
   base: {
     _hover: { },
   },
+  className: "{{camelCase name}}",
   compoundVariants: [],
   variants: {
     variant: {
@@ -17,4 +17,5 @@ export const {{camelCase name}}Recipe = defineRecipe({
       md: { },
     }
   },
+  jsx: ["{{pascalCase name}}"]
 });

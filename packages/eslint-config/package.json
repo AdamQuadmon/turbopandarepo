@@ -1,29 +1,48 @@
 {
-  "name": "@turbopandarepo/eslint-config",
-  "version": "0.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "lint": "eslint \"**/*.js\"",
-    "clean": "rimraf .turbo node_modules"
-  },
-  "dependencies": {
-    "@eslint/js": "^8.44.0",
-    "@next/eslint-plugin-next": "^13.4.9",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-import-resolver-node": "^0.3.7",
-    "eslint-import-resolver-typescript": "^3.5.5",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.2",
-    "eslint-plugin-react": "7.32.2",
-    "eslint-plugin-turbo": "^1.10.7",
-    "eslint": "^8.44.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@turbopandarepo/eslint-config",
+	"version": "0.0.0",
+	"description": "ESLint Flat Config",
+	"license": "MIT",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"clean": "rimraf .turbo node_modules",
+		"lint": "eslint ."
+	},
+	"dependencies": {
+		"@eslint/js": "^8.50.0",
+		"@next/eslint-plugin-next": "^13.5.3",
+		"@turbopandarepo/tsconfig": "workspace:*",
+		"@types/eslint": "^8.44.3",
+		"@typescript-eslint/eslint-plugin": "^6.7.3",
+		"@typescript-eslint/parser": "^6.7.3",
+		"eslint": "^8.50.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-deprecation": "^2.0.0",
+		"eslint-plugin-eslint-comments": "^3.2.0",
+		"eslint-plugin-jsdoc": "^46.8.2",
+		"eslint-plugin-jsonc": "^2.9.0",
+		"eslint-plugin-jsx-a11y": "^6.7.1",
+		"eslint-plugin-markdown": "^3.0.1",
+		"eslint-plugin-markdownlint": "^0.5.0",
+		"eslint-plugin-n": "^16.1.0",
+		"eslint-plugin-no-only-tests": "^3.1.0",
+		"eslint-plugin-perfectionist": "^2.1.0",
+		"eslint-plugin-react": "7.33.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.3",
+		"eslint-plugin-regexp": "^1.15.0",
+		"eslint-plugin-storybook": "^0.6.14",
+		"eslint-plugin-turbo": "^1.10.14",
+		"eslint-plugin-vitest": "^0.3.1",
+		"eslint-plugin-yml": "^1.9.0",
+		"globals": "^13.22.0",
+		"jsonc-eslint-parser": "^2.3.0",
+		"react": "^18.2.0",
+		"rimraf": "^5.0.4",
+		"yaml-eslint-parser": "^1.2.2"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }

@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Monorepo React Package",
+	"extends": "./react.json",
+	"compilerOptions": {
+		// composite is not supported by tsup see https://github.com/egoist/tsup/issues/571
+		"composite": false,
+		"declarationMap": false,
+		"declaration": false,
+		"jsx": "react-jsx"
+	},
+	"include": ["src"]
+}

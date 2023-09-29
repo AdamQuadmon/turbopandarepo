@@ -1,9 +1,10 @@
 {
-  "name": "@turbopandarepo/tsconfig",
-  "version": "0.0.0",
-  "private": true,
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@turbopandarepo/tsconfig",
+	"version": "0.0.0",
+	"private": true,
+	"description": "TypeScript config",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	}
 }

@@ -1,26 +1,29 @@
-import { semanticColors } from "./colors/semantic";
-import { colors } from "./colors/socials";
+import type { Preset } from "@pandacss/types";
+
+import { definePreset } from "@pandacss/dev";
+
+import { breakpoints } from "./config/breakpoints";
+import { keyframes } from "./config/keyframes";
+import { layerStyles } from "./config/layer-styles";
+import { textStyles } from "./config/text-styles";
+import { globalCss } from "./global-css";
 import { recipes } from "./recipes";
+import { semanticTokens } from "./semantic-tokens";
+import { tokens } from "./tokens";
 
-import type { Config } from "@pandacss/types";
-
-const definePreset = <T extends Config>(config: T) => config;
-
-const preset = definePreset({
-  theme: {
-    extend: {
-      tokens: {
-        colors,
-      },
-      semanticTokens: {
-        colors: semanticColors,
-      },
-
-      recipes,
-    },
-  },
+const preset: Preset = definePreset({
+	globalCss,
+	theme: {
+		extend: {
+			breakpoints,
+			keyframes,
+			layerStyles,
+			recipes,
+			semanticTokens,
+			textStyles,
+			tokens,
+		},
+	},
 });
 
 export default preset;
-
-// export { preset, buttonRecipe };

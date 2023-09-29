@@ -1,13 +1,21 @@
 {
-  "extends": "@turbopandarepo/tsconfig/nextjs.json",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": [
-    "src/**/*.ts*",
-    ".storybook/**/*.ts",
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    "panda.config.ts"
-  ]
+	"extends": "@turbopandarepo/tsconfig/nextjs.json",
+	"compilerOptions": {
+		"outDir": "dist",
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./src/*"],
+			"~/contentlayer": [".contentlayer/generated"]
+		}
+	},
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".contentlayer/generated",
+		".next/types/**/*.ts",
+		".storybook/**/*.ts",
+		"node_modules/@turbopandarepo/ds"
+	],
+	"exclude": ["node_modules", "dist"]
 }

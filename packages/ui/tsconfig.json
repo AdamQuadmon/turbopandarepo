@@ -1,4 +1,4 @@
 {
-  "extends": "@turbopandarepo/tsconfig/react-library.json",
-  "include": [".", "panda.config.ts"]
+	"extends": "@turbopandarepo/tsconfig/monorepo.json",
+	"include": ["."]
 }

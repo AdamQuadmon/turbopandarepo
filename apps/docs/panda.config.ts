@@ -1,54 +1,64 @@
 import { defineConfig } from "@pandacss/dev";
-import preset from "@pandacss/preset-panda";
-
-import presetPanda from "@turbopandarepo/preset";
+// import pandaPreset from "@pandacss/preset-panda";
+import presetPark from "@park-ui/presets";
+import turborepoPreset from "@turbopandarepo/preset";
+import radixColorsPreset from "pandacss-preset-radix-colors";
+import typographyPreset from "pandacss-preset-typography";
 
 export default defineConfig({
-  presets: [presetPanda, preset],
-  // Whether to use css reset
-  preflight: true,
+	presets: [
+		// using pandaPreset gives typescript errors on vscode
+		"@pandacss/dev/presets",
+		// pandaPreset,
+		"panda-transitions-css",
+		"animated-pandacss",
+		radixColorsPreset(),
+		typographyPreset({
+			prose: {
+				colors: {
+					body: "slate.12",
+					bold: "slate.12",
+					bullet: "slate.11",
+					caption: "slate.11",
+					code: "amber.11",
+					counter: "slate.11",
+					heading: "slate.12",
+					hrBorder: "slate.6",
+					lead: "slate.12",
+					link: "blue.11",
+					preBackground: "slate.2",
+					preCode: "slate.12",
+					quote: "slate.11",
+					quoteBorder: "slate.6",
+					tdBorder: "slate.6",
+					thBorder: "slate.6",
+				},
+				name: "typography",
+				// Advanced JSX tracking:
+				// https://panda-css.com/docs/concepts/recipes#advanced-jsx-tracking
+				jsx: ["Button", "Link", /Button$/],
+			},
+		}),
+		presetPark,
+		turborepoPreset,
+	],
+	// Whether to use css reset
+	exclude: [],
 
-  // Where to look for your css declarations
-  include: [
-    "./node_modules/@turbopandarepo/ds/src/**/*.ts*",
-    "./node_modules/@turbopandarepo/ui/src/**/*.ts*",
-    // "./node_modules/@turbopandarepo/preset/src/**/*.ts*",
-    // using this instead of the above will trigger a refresh when the preset is changed
-    // but config:change is not triggered
-    //
-    // touching this config will trigger a refresh and config:change is triggered
-    // but still the style is not updated until storybook reload
-    "../../packages/preset/src/**/*.ts*",
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+	include: [
+		"./node_modules/@turbopandarepo/ui/src/**/*.tsx",
+		"./src/**/*.{js,jsx,ts,tsx}",
+	],
 
-  // Files to exclude
-  exclude: [],
+	jsxFramework: "react",
 
-  // Useful for theme customization
-  theme: {
-    extend: {},
-  },
-  hooks: {
-    "config:resolved": (conf) => {
-      // console.log(JSON.stringify(conf, null, 5));
-      console.log("🐼 config:resolve");
-    },
-    "config:change": (conf) => {
-      console.log(
-        "🐼 config:change",
-        JSON.stringify(conf?.theme?.recipes, null, 5),
-      );
-    },
-    "parser:before": (file, _content) => {
-      console.log("🐼 parser:before", file);
-    },
-    "generator:css": (file, _css) => {
-      console.log("🐼 generator:css", file);
-    },
-  },
-  // The output directory for your css system
-  outdir: "@turbopandarepo/ds",
-  // https://panda-docs.vercel.app/docs/guides/component-library#use-panda-as-external-package
-  emitPackage: true,
+	preflight: true,
+	theme: {
+		extend: {},
+	},
+	// The output directory for your css system
+	outExtension: "js",
+	outdir: "@turbopandarepo/ds",
+	// https://panda-docs.vercel.app/docs/guides/component-library#use-panda-as-external-package
+	emitPackage: true,
 });

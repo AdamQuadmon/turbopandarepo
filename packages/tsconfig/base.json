@@ -1,20 +1,63 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Default",
-  "compilerOptions": {
-    "composite": false,
-    "declaration": true,
-    "declarationMap": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "inlineSources": false,
-    "isolatedModules": true,
-    "moduleResolution": "node",
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "preserveWatchOutput": true,
-    "skipLibCheck": true,
-    "strict": true
-  },
-  "exclude": ["node_modules"]
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Default",
+	// See https://www.lucaspaganini.com/academy/20-typescript-compiler-options-for-your-tsconfig-json
+	// and https://www.totaltypescript.com/tsconfig-cheat-sheet
+	// and https://github.com/tsconfig/bases
+	"compilerOptions": {
+		/* Importers: */
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"moduleDetection": "force",
+		"resolveJsonModule": true,
+		"verbatimModuleSyntax": true,
+		"lib": ["es2022"],
+
+		/* Performances */
+		"skipLibCheck": true,
+
+		/* Dev helpers */
+		"preserveWatchOutput": true,
+
+		/* Upcoming features */
+		"useDefineForClassFields": true,
+
+		/* Strict */
+		"strict": true,
+		"alwaysStrict": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"strictNullChecks": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"useUnknownInCatchVariables": true,
+
+		/* No unused code */
+		"allowUnusedLabels": false,
+		"allowUnreachableCode": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+
+		/* No implicit code */
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+
+		/* Other strictness */
+		"forceConsistentCasingInFileNames": true,
+		"exactOptionalPropertyTypes": true,
+		"noUncheckedIndexedAccess": true,
+		"noFallthroughCasesInSwitch": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"isolatedModules": true,
+
+		/* packaging */
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		// "moduleResolution": "Bundler",
+		"noEmit": true,
+		"target": "es2022"
+	},
+	"exclude": ["node_modules", "dist"]
 }

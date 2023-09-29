@@ -1,31 +1,45 @@
 {
-  "name": "@turbopandarepo/ui",
-  "version": "0.0.0",
-  "main": "src/index.tsx",
-  "types": "src/index.tsx",
-  "sideEffects": false,
-  "license": "MIT",
-  "scripts": {
-    "prepare": "panda codegen",
-    "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "clean": "rimraf .turbo node_modules"
-  },
-  "dependencies": {
-    "@pandacss/preset-panda": "^0.6.0",
-    "@turbopandarepo/preset": "workspace:*"
-  },
-  "devDependencies": {
-    "@pandacss/dev": "^0.6.0",
-    "@pandacss/types": "^0.6.0",
-    "@turbopandarepo/tsconfig": "workspace:*",
-    "@turbopandarepo/eslint-config": "workspace:*",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "eslint": "^8.44.0",
-    "react": "^18.2.0",
-    "typescript": "^5.1.6"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@turbopandarepo/ui",
+	"version": "0.0.0",
+	"description": "ParkUi user interface",
+	"license": "MIT",
+	"sideEffects": false,
+	"type": "module",
+	"main": "src/index.ts",
+	"types": "src/index.ts",
+	"scripts": {
+		"clean": "rimraf .turbo node_modules",
+		"lint": "eslint .",
+		"prepare": "panda codegen --clean"
+	},
+	"dependencies": {
+		"@ark-ui/react": "^0.15.0",
+		"@icons-pack/react-simple-icons": "^9.0.1",
+		"@pandacss/dev": "^0.15.1",
+		"@pandacss/preset-panda": "^0.15.1",
+		"@park-ui/presets": "^0.15.0",
+		"@radix-ui/colors": "3.0.0-rc.5",
+		"@theme-toggles/react": "^4.1.0",
+		"@turbopandarepo/eslint-config": "workspace:*",
+		"@turbopandarepo/preset": "workspace:*",
+		"animated-pandacss": "^0.0.2",
+		"lucide-react": "^0.279.0",
+		"next": "^13.5.3",
+		"panda-transitions-css": "^0.0.1",
+		"pandacss-preset-radix-colors": "^0.0.7",
+		"pandacss-preset-typography": "^0.0.10",
+		"react": "^18.2.0",
+		"react-hook-form": "^7.46.2",
+		"ts-pattern": "^5.0.5",
+		"usehooks-ts": "^2.9.1",
+		"zustand": "^4.4.1"
+	},
+	"devDependencies": {
+		"@turbopandarepo/tsconfig": "workspace:*",
+		"rimraf": "^5.0.4",
+		"typescript": "^5.2.2"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }
