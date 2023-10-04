@@ -1,0 +1,10 @@
+{
+	"LocaleSwitcher": {
+		"label": "Change language",
+		"locale": "{locale, select, it {Italian} en {English} other {Unknown}}"
+	},
+	"Navigation": {
+		"home": "Home",
+		"about": "About"
+	}
+}

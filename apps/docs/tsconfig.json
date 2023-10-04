@@ -4,15 +4,13 @@
 		"outDir": "dist",
 		"baseUrl": ".",
 		"paths": {
-			"~/*": ["./src/*"],
-			"~/contentlayer": [".contentlayer/generated"]
+			"~/*": ["./src/*"]
 		}
 	},
 	"include": [
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		".contentlayer/generated",
 		".next/types/**/*.ts",
 		".storybook/**/*.ts",
 		"node_modules/@turbopandarepo/ds"

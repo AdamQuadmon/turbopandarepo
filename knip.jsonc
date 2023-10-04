@@ -5,7 +5,7 @@
 			"entry": "turbo/*.js",
 			"project": "turbo/**/*.js"
 		},
-		"apps/docs": {
+		"apps/*": {
 			"entry": ["src/{index,cli}.ts", "panda.config.ts"],
 			"project": "**/*.ts"
 		},

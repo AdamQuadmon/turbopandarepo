@@ -2,11 +2,38 @@
 
 ## Milestones
 
+- setup base production ready website
+
+  - i18n
+  - supabase
+    - user admin
+    - content admin
+      - topics
+      - web pages
+      - blog posts
+      - photo
+    - user gallery
+      - albums
+      - tags
+      - filter
+    - payment system
+      - checkout
+      - subscription
+    - e-commerce
+    - marketplace
+  - contentLayer
+  - stripe
+
 - document Panda stuff with Storybook
 
 ## Todo
 
-- check presets changes in storybook
+### UX
+
+- id="skip" to skip to content
+
+## Things to check
+
 - add files to perfectionist ignore (generators/config, recipes, and others)
 - check why Park-Ui uses zustand instead of zag
 - check tree shaking of ui elements and presets
@@ -23,10 +50,6 @@
   reinstall action, maybe we should remove rimraf deps from packages to only
   rely on global installed one
 
-### Recheck bugs
-
-- check eslint issues with plop
-
 ## Specific issues
 
 ### NextJs
@@ -36,7 +59,7 @@
   - <https://panda-css.com/docs/installation/nextjs#install-panda-css>
   - <https://nextjs.org/docs/pages/building-your-application/configuring/post-css#customizing-plugins>
 
-### ESLint Issues
+### ESLint, Prettier, Typescript Issues
 
 Recheck docs, try implement next lint:
 
@@ -44,6 +67,7 @@ Recheck docs, try implement next lint:
 - <https://turbo.build/repo/docs/handbook/linting/eslint>
 
 - packages/tsconfig is not linted
+- check prettier-plugin-organize-attributes
 - check eslint entrypoint "." vs "src/\*_/_.ts\*"
 - check markdown line length, it's disabled by markdownlint/style/prettier, but
   it's disabled also in prettier, I had to add proseWrap: always
@@ -51,6 +75,7 @@ Recheck docs, try implement next lint:
 ### Storybook Issues
 
 - check if storybook issues are still there
+- currently there is no Story of a recipe
 - reduce autodoc generated attributes
 
 This implementation has still some issues:
@@ -60,11 +85,9 @@ This implementation has still some issues:
       still reads the old config until storybook restart
 - [ ] **only declared styles** are available in Storybook maybe this can help
       [Static CSS Generator: Recipes](https://panda-css.com/docs/guides/static#generating-recipes)
-- [ ] **\_hover** condition style in base button is **not inherited** by
-      variants (maybe not a bug)
-- [ ] missing a **Control field transformer** for **ConditionalValue** (see
-      Button.stories.tsx variant and size example)
 
 ### PandaCSS Issues
 
+- how to extend a recipe?
 - how to not duplicate panda.config in docs and ui (at least for presets)?
+- how to fix Custom Compound Components Slot Recipe?

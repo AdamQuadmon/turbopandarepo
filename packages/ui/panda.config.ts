@@ -13,29 +13,32 @@ export default defineConfig({
 		"animated-pandacss",
 		radixColorsPreset(),
 		typographyPreset({
-			prose: {
-				colors: {
-					body: "slate.12",
-					bold: "slate.12",
-					bullet: "slate.11",
-					caption: "slate.11",
-					code: "amber.11",
-					counter: "slate.11",
-					heading: "slate.12",
-					hrBorder: "slate.6",
-					lead: "slate.12",
-					link: "blue.11",
-					preBackground: "slate.2",
-					preCode: "slate.12",
-					quote: "slate.11",
-					quoteBorder: "slate.6",
-					tdBorder: "slate.6",
-					thBorder: "slate.6",
+			recipe: {
+				// Name of the recipe export
+				className: "prose",
+				name: "prose",
+				// Sizes you want to include
+				defaultSize: "base",
+				sizes: ["sm", "base", "lg", "xl", "2xl"],
+				// Enable/disable not-prose functionality
+				// just like in TailwindCSS
+				notProse: false,
+				// notProse: true,
+				// notProse: {
+				//   className: "not-prose",
+				// },
+				semanticTokens: {
+					// defaults: true,
+					defaults: {
+						// Set a color palette to use for the defaults.
+						// It only works with colors that have a numeric scale (11x)
+						// from 50 to 950. (50, 100, 200, ..., 800, 900, 950).
+						colorPalette: "slate",
+					},
+					// The prefix to use for semantic tokens.
+					// ex: --colors-<prefix>-body
+					prefix: "prose",
 				},
-				name: "typography",
-				// Advanced JSX tracking:
-				// https://panda-css.com/docs/concepts/recipes#advanced-jsx-tracking
-				jsx: ["Button", "Link", /Button$/],
 			},
 		}),
 		"@park-ui/presets",

@@ -2,7 +2,9 @@ import { defineSlotRecipe } from "@pandacss/dev";
 
 const slots = [
 	"blur",
+	"center",
 	"header",
+	"left",
 	"linkChat",
 	"linkIcon",
 	"linkLogo",
@@ -10,11 +12,9 @@ const slots = [
 	"linkNav",
 	"linkText",
 	"mobile",
-	"navCenter",
-	"navLeft",
 	"navMain",
-	"navRight",
 	"navSocials",
+	"right",
 	"root",
 	"sidebar",
 	"sidebarContainer",
@@ -47,6 +47,17 @@ export const navbar = defineSlotRecipe({
 			w: "full",
 			zIndex: -1,
 		},
+		center: {
+			alignItems: "center",
+			display: "flex",
+			gap: 2,
+			h: "var(--navbar-height)",
+			justifyContent: "flex-end",
+			maxW: "90rem",
+			mx: "auto",
+			pl: "max(env(safe-area-inset-left),1.5rem)",
+			pr: "max(env(safe-area-inset-right),1.5rem)",
+		},
 		header: {
 			borderBottomWidth: "1px",
 			display: "flex",
@@ -55,6 +66,10 @@ export const navbar = defineSlotRecipe({
 			position: "relative",
 			px: { base: "", md: "4" },
 			py: { base: "2", md: "3" },
+		},
+		left: {
+			display: "flex",
+			gap: 10,
 		},
 		linkIcon: {
 			h: "18px",
@@ -85,32 +100,17 @@ export const navbar = defineSlotRecipe({
 			position: "absolute",
 			textAlign: "center",
 		},
-		navCenter: {
-			alignItems: "center",
-			display: "flex",
-			gap: 2,
-			h: "var(--navbar-height)",
-			justifyContent: "flex-end",
-			maxW: "90rem",
-			mx: "auto",
-			pl: "max(env(safe-area-inset-left),1.5rem)",
-			pr: "max(env(safe-area-inset-right),1.5rem)",
-		},
-		navLeft: {
-			display: "flex",
-			gap: 10,
-		},
 		navMain: {
 			display: { base: "none", lg: "flex" },
 			gap: 8,
 		},
-		navRight: {
-			display: "flex",
-			gap: 10,
-		},
 		navSocials: {
 			display: "flex",
 			gap: 0.5,
+		},
+		right: {
+			display: "flex",
+			gap: 10,
 		},
 		root: {
 			_print: { display: "none" },

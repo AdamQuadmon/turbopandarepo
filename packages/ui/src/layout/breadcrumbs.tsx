@@ -1,16 +1,15 @@
-"use client";
 import { HStack, type HstackProps } from "@turbopandarepo/ds/jsx";
 import { ChevronRightIcon } from "lucide-react";
-import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 
 import { Icon, Typography } from "../ui";
 
-type BreadcrumbsProps = HstackProps;
+interface BreadcrumbsProps extends HstackProps {
+	pathname: string;
+}
 
-export const Breadcrumbs = (props: BreadcrumbsProps) => {
-	const pathName = usePathname();
-	const crumbs = pathName
+export const Breadcrumbs = ({ pathname, ...props }: BreadcrumbsProps) => {
+	const crumbs = pathname
 		.split("/")
 		.filter(Boolean)
 		.filter((path) => !["docs"].includes(path))

@@ -1,7 +1,6 @@
 "use client";
+
 import { Stack } from "@turbopandarepo/ds/jsx";
-import NextLink from "next/link";
-import { usePathname } from "next/navigation";
 import {
 	type PropsWithChildren,
 	type ReactElement,
@@ -9,7 +8,7 @@ import {
 	useState,
 } from "react";
 
-import { Badge, Typography } from "../../ui";
+import { Typography } from "../../ui";
 import {
 	Segment,
 	SegmentControl,
@@ -18,24 +17,26 @@ import {
 	SegmentLabel,
 } from "../../ui/segment-group";
 
-interface SitemapEntry {
-	href: string;
-	label?: string;
-	title: string;
+export interface SidebarProps extends PropsWithChildren {
+	pathname: string;
+	sitemap: SitemapGroup[];
 }
+
+interface SitemapEntry {
+	Link: ReactElement;
+	href: string;
+}
+
 export interface SitemapGroup {
 	entries: SitemapEntry[];
 	name: string;
 }
-export interface SidebarProps extends PropsWithChildren {
-	sitemap: SitemapGroup[];
-}
 
 export const NavbarSidebar = ({
 	children,
+	pathname,
 	sitemap,
 }: SidebarProps): ReactElement => {
-	const pathname = usePathname();
 	const [currentPath, setCurrentPath] = useState(pathname);
 
 	useEffect(() => {
@@ -59,19 +60,11 @@ export const NavbarSidebar = ({
 						value={currentPath}
 					>
 						{group.entries.map((option, id) => (
-							<Segment
-								asChild
-								data-orientation="vertical"
-								key={id}
-								value={option.href}
-							>
-								<NextLink href={option.href}>
-									<SegmentControl />
-									<SegmentLabel display="inline-flex" gap="2">
-										{option.title}{" "}
-										{option.label && <Badge size="sm">{option.label}</Badge>}
-									</SegmentLabel>
-								</NextLink>
+							<Segment data-orientation="vertical" key={id} value={option.href}>
+								<SegmentControl />
+								<SegmentLabel display="inline-flex" gap="2">
+									{option.Link}
+								</SegmentLabel>
 							</Segment>
 						))}
 						<SegmentGroupIndicator

@@ -3,7 +3,6 @@
 import { Portal } from "@ark-ui/react";
 import { Stack } from "@turbopandarepo/ds/jsx";
 import { MenuIcon, XIcon } from "lucide-react";
-import { usePathname } from "next/navigation";
 import { type PropsWithChildren, type ReactElement, useEffect } from "react";
 
 import { IconButton } from "../../ui";
@@ -16,9 +15,14 @@ import {
 	DrawerTrigger,
 } from "../../ui/drawer";
 
+interface NavbarSidebarContainerProps extends PropsWithChildren {
+	pathname: string;
+}
+
 export const NavbarSidebarContainer = ({
 	children,
-}: PropsWithChildren): ReactElement => {
+	pathname,
+}: NavbarSidebarContainerProps): ReactElement => {
 	// https://ark-ui.com/docs/components/dialog#using-render-function
 	return (
 		<Drawer placement="left">
@@ -29,7 +33,7 @@ export const NavbarSidebarContainer = ({
 							<MenuIcon />
 						</IconButton>
 					</DrawerTrigger>
-					<RouteChangeHandler close={close} />
+					<RouteChangeHandler close={close} pathname={pathname} />
 					<Portal>
 						<DrawerBackdrop />
 						<DrawerContainer>
@@ -58,10 +62,10 @@ export const NavbarSidebarContainer = ({
 
 interface RouteChangeHandlerProps {
 	close: () => void;
+	pathname: string;
 }
 
-const RouteChangeHandler = ({ close }: RouteChangeHandlerProps) => {
-	const pathname = usePathname();
+const RouteChangeHandler = ({ close, pathname }: RouteChangeHandlerProps) => {
 	useEffect(() => {
 		close();
 	}, [pathname]);

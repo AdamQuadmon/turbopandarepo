@@ -5,6 +5,11 @@ CSS. Inspired by Park-Ui website. See
 <https://github.com/cschroeter/park-ui/tree/main/website/src/components> for
 more components.
 
+## TODO
+
+- remove unused deps (presets)
+- find solutions for external deps (next-link, next-intl, etc)
+
 ## Presets
 
 - [animated-pandacss](https://anubra266.github.io/animated-pandacss/): adds
@@ -24,6 +29,8 @@ more components.
 - [ts-pattern](https://github.com/gvergnaud/ts-pattern)
 - [usehooks-ts](https://usehooks-ts.com/)
 - [zustand](https://github.com/pmndrs/zustand)
+- [compound-pattern](https://javascriptpatterns.vercel.app/patterns/react-patterns/compound-pattern)
+  Guides
 
 ## Components
 
@@ -93,3 +100,9 @@ see
 - use-scroll-directions
 - use-theme-generator
 - use-theme-store
+
+### Components to implement
+
+- [mobile-social-network-profile-page](https://tailwindcomponents.com/component/mobile-social-network-profile-page)
+- [merakui navbars](https://merakiui.com/components/navbars)
+- [kutty headers](https://kutty.netlify.app/components/headers/)

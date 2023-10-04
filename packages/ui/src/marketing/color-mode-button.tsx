@@ -1,6 +1,6 @@
 "use client";
 import { Classic } from "@theme-toggles/react";
-// import "@theme-toggles/react/css/Classic.css";
+import "@theme-toggles/react/css/Classic.css";
 import { css, cx } from "@turbopandarepo/ds/css";
 import { button } from "@turbopandarepo/ds/recipes";
 import { useIsClient } from "usehooks-ts";

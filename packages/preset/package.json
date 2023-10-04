@@ -17,8 +17,8 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
-		"@pandacss/dev": "^0.15.3",
-		"@pandacss/types": "^0.15.3",
+		"@pandacss/dev": "^0.15.4",
+		"@pandacss/types": "^0.15.4",
 		"@turbopandarepo/eslint-config": "workspace:*"
 	},
 	"devDependencies": {

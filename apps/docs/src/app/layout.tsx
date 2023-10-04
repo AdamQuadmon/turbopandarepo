@@ -1,13 +1,15 @@
 import type { PropsWithChildren } from "react";
 
 import { cx } from "@turbopandarepo/ds/css";
-// import { colorModeLocalStorageKey } from "@turbopandarepo/ui";
+import { Head } from "@turbopandarepo/ui";
 import { Analytics } from "@vercel/analytics/react";
 
-import { Navbar } from "~/components/layout/navbar";
+// TODO implement SEO metadata
+// import { generateSeoMetadata } from "@/seo.config";
 
-import { firaCode, inter, jakarta, outfit, raleway } from "./fonts";
-import "./globals.css";
+import { firaCode, inter, jakarta, outfit, raleway } from "~/app/fonts";
+import "~/app/globals.css";
+import { BaseLayout } from "~/components/layout";
 
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
@@ -21,21 +23,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
 			)}
 			lang="en"
 		>
-			{/* <head>
-				<ColorModeScript />
-			</head> */}
+			<Head />
 			<body>
 				<Analytics />
-				<Navbar />
-				{children}
+				<BaseLayout>{children}</BaseLayout>
 			</body>
 		</html>
 	);
 }
-
-// const ColorModeScript = () => {
-// 	const colorModeScript =
-// 		// language=javascript
-// 		`if (JSON.parse(window.localStorage.getItem('${colorModeLocalStorageKey}')) === 'dark') {document.documentElement.classList.add('dark')}`;
-// 	return <script dangerouslySetInnerHTML={{ __html: colorModeScript }} />;
-// };

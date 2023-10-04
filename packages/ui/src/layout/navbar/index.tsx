@@ -1,55 +1,47 @@
 "use client";
 
+import type { ComponentPropsWithoutRef } from "react";
+
 import { ark } from "@ark-ui/react";
 import { styled } from "@turbopandarepo/ds/jsx";
 import { type NavbarVariantProps, navbar } from "@turbopandarepo/ds/recipes";
 
 import { createStyleContext } from "../../lib/create-style-context";
-import { Navbar as BNavbar, type NavbarProps as BNavbarProps } from "./navbar";
-import { NavbarNavMain as BNavbarNavMain } from "./navbar-nav-main";
-import { NavbarNavSocials as BNavbarNavSocials } from "./navbar-nav-socials";
-import { NavbarSidebar as BNavbarSidebar } from "./navbar-sidebar";
-import { NavbarSidebarContainer as BNavbarSidebarContainer } from "./navbar-sidebar-container";
-import { NavbarSidebarSwitch as BNavbarSidebarSwitch } from "./navbar-sidebar-switch";
-
-// see https://www.faststore.dev/components/organisms/navbar
 
 const { withContext, withProvider } = createStyleContext(navbar);
 
-export type NavbarProps = NavbarVariantProps & BNavbarProps;
+export type NavbarProps = NavbarVariantProps &
+	ComponentPropsWithoutRef<typeof ark.nav>;
 
-const NavbarRoot = withProvider(styled(BNavbar), "root");
+const NavbarRoot = withProvider(styled(ark.nav), "root");
 
 export const NavbarHeader = withContext(styled(ark.div), "header");
-export const NavbarLeft = withContext(styled(ark.div), "navLeft");
-export const NavbarCenter = withContext(styled(ark.div), "navCenter");
-export const NavbarRight = withContext(styled(ark.div), "navRight");
+export const NavbarLeft = withContext(styled(ark.div), "left");
+export const NavbarCenter = withContext(styled(ark.div), "center");
+export const NavbarRight = withContext(styled(ark.div), "right");
 
-export const NavbarNavMain = withContext(styled(BNavbarNavMain), "navMain");
-export const NavbarNavSocials = withContext(
-	styled(BNavbarNavSocials),
+export const NavbarStyledNavMain = withContext(styled(ark.div), "navMain");
+export const NavbarStyledNavSocials = withContext(
+	styled(ark.div),
 	"navSocials",
 );
 
-export const NavbarSidebar = withContext(BNavbarSidebar, "sidebar");
-export const NavbarSidebarSwitch = withContext(
-	BNavbarSidebarSwitch,
-	"sidebarSwitch",
-);
-export const NavbarSidebarContainer = withContext(
-	styled(BNavbarSidebarContainer),
+export const NavbarSidebarSwitch = withContext(ark.div, "sidebarSwitch");
+export const NavbarStyledSidebarContainer = withContext(
+	styled(ark.div),
 	"sidebarContainer",
 );
+export const NavbarStyledSidebar = withContext(ark.div, "sidebar");
 
 export const Navbar = Object.assign(NavbarRoot, {
 	Center: NavbarCenter,
 	Header: NavbarHeader,
 	Left: NavbarLeft,
-	NavMain: NavbarNavMain,
-	NavSocials: NavbarNavSocials,
+	NavMain: NavbarStyledNavMain,
+	NavSocials: NavbarStyledNavSocials,
 	Right: NavbarRight,
 	Root: NavbarRoot,
-	Sidebar: NavbarSidebar,
-	SidebarContainer: NavbarSidebarContainer,
+	Sidebar: NavbarStyledSidebar,
+	SidebarContainer: NavbarStyledSidebarContainer,
 	SidebarSwitch: NavbarSidebarSwitch,
 });

@@ -29,7 +29,11 @@ This Turborepo includes the following:
 
 ### Apps and Packages
 
-- `@turbopandarepo/docs`: A Storybook documentation site powered by Next.js
+- `@turbopandarepo/docs`: Storybook documentation on Next.js
+- `@turbopandarepo/locale`: next-intl i18n on Next.js
+- `@turbopandarepo/supabase`: Supabase with Auth, UserProfile and Checkout on
+  Next.js
+- `@turbopandarepo/enterprise`: A full featured Next.js
 - `@turbopandarepo/eslint-config`: ESLint preset using **Flat Config**
 - `@turbopandarepo/preset`: PandaCSS custom preset
 - `@turbopandarepo/tsconfig`: Shared `tsconfig.json`s used throughout the

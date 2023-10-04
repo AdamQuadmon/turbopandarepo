@@ -1,23 +1,15 @@
-"use client";
+import type { IMenuLink } from "@turbopandarepo/ui";
 
 import { navbar } from "@turbopandarepo/ds/recipes";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { type PropsWithChildren, type ReactElement } from "react";
 
-interface ILink {
-	label: string;
-	path: string;
+export interface NavLinksProps extends PropsWithChildren {
+	links: IMenuLink[];
 }
 
-export interface NavbarNavMainProps extends PropsWithChildren {
-	links: ILink[];
-}
-
-export const NavbarNavMain = ({
-	children,
-	links,
-}: NavbarNavMainProps): ReactElement => {
+export const NavLinks = ({ children, links }: NavLinksProps): ReactElement => {
 	const classes = navbar();
 	const pathName = usePathname();
 	return (

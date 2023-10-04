@@ -15,3 +15,8 @@ export const runGenerator: PlopTypes.CustomActionFunction = async () => {
 	// exec turbo gen run generator-name --args arg1 arg2
 	return "Generator executed!";
 };
+
+export const addI18n: PlopTypes.CustomActionFunction = async () => {
+	// exec turbo gen run generator-name --args arg1 arg2
+	return "Generator executed!";
+};
