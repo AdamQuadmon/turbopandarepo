@@ -66,9 +66,10 @@ Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Other commands
 
-- `pnpm up -L -r -i` - to interactively and recursively update dependencies to
+- `pnpm up -L -r -i` - interactively and recursively update dependencies to
   latest versions
-- `pnpm add react --filter web` - to add a package to a specific workspace
+- `pnpm add react --filter web` - add packages to a specific workspace
+- `pnpm add contentlayer --filter './apps/*'` - add packages to a specific path
 
 #### notes on adding a packages
 

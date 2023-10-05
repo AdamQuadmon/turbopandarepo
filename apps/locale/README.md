@@ -1,23 +1,24 @@
 # Apps/Locale
 
-base locale app for web projects
+Base locale app for web projects powered by NextJs and next-intl
+
+For list of other features see `apps/docs`
 
 ## TODO
 
-- packages/ui: navbar-advanced and footer
-- NextIntlClientProvider for ClientContent and Error page
-- check switcher, make it simple 2 locales switch
-  [see LocaleSwitcher](https://github.com/amannn/next-intl/blob/feat/next-13-rsc/examples/example-next-13-advanced/src/components/LocaleSwitcher.tsx)
+- implement ContentLayer
+- implement SEO Metadata
+- implement new NavbarAdvanced and FooterAdvanced
+- add blog, news and other pages
+- check NextIntlClientProvider for ClientContent and Error page
 - check button-link, external-link
-- move layout components to ui if possible (base, footer, head, navbar, page)
-- generateMetadata: data from translations or from DB?
-- add blog, news and categories pages
+- check switcher, make it a simple 2 locales switch
+  [see LocaleSwitcher](https://github.com/amannn/next-intl/blob/feat/next-13-rsc/examples/example-next-13-advanced/src/components/LocaleSwitcher.tsx)
 - add multiple locale switcher
 
 ## Features
 
-- NextJs with i18n
-- UI with PandaCss
+-
 
 ## i18n with next-intl
 

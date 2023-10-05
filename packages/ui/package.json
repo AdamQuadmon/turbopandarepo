@@ -14,10 +14,10 @@
 	},
 	"dependencies": {
 		"@ark-ui/react": "^0.15.0",
-		"@icons-pack/react-simple-icons": "^9.0.1",
-		"@pandacss/dev": "^0.15.4",
-		"@pandacss/preset-panda": "^0.15.4",
-		"@park-ui/presets": "^0.16.0",
+		"@icons-pack/react-simple-icons": "^9.1.0",
+		"@pandacss/dev": "^0.15.5",
+		"@pandacss/preset-panda": "^0.15.5",
+		"@park-ui/presets": "^0.17.0",
 		"@radix-ui/colors": "3.0.0",
 		"@theme-toggles/react": "^4.1.0",
 		"@turbopandarepo/eslint-config": "workspace:*",
@@ -32,7 +32,7 @@
 		"react-hook-form": "^7.47.0",
 		"ts-pattern": "^5.0.5",
 		"usehooks-ts": "^2.9.1",
-		"zustand": "^4.4.2"
+		"zustand": "^4.4.3"
 	},
 	"devDependencies": {
 		"@turbopandarepo/tsconfig": "workspace:*",

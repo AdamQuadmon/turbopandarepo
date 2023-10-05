@@ -1,0 +1,9 @@
+title: Turbopandarepo Docs
+titleTemplate: "%s | Turbopandarepo Docs"
+description: A PandaCSS Doc website powered by Turborepo
+icon: 🐼
+url: https://example.com
+ogImageApi: https://example.com/api/og
+sitemapPaths:
+  - /about
+  - /posts

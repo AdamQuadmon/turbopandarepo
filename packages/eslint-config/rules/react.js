@@ -5,7 +5,7 @@ const reactRules = {
 		"react/no-unknown-property": "off",
 		"react/prop-types": "off",
 		"react/react-in-jsx-scope": "off",
-		"react-refresh/only-export-components": "warn",
+		"react-refresh/only-export-components": "off",
 	},
 };
 

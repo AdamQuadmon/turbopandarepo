@@ -4,12 +4,14 @@ import { cx } from "@turbopandarepo/ds/css";
 import { Head } from "@turbopandarepo/ui";
 import { Analytics } from "@vercel/analytics/react";
 
-// TODO implement SEO metadata
-// import { generateSeoMetadata } from "@/seo.config";
-
 import { firaCode, inter, jakarta, outfit, raleway } from "~/app/fonts";
 import "~/app/globals.css";
 import { BaseLayout } from "~/components/layout";
+import { generateSiteMetadata } from "~/utils/generate-metadata";
+
+export const generateMetadata = () => {
+	return generateSiteMetadata();
+};
 
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (

@@ -4,17 +4,85 @@ base app for web projects
 
 ## TODO
 
-- make next metadata get dynamic data in head component
+- fix layout
+- fix navigation
+- add blog, news and other pages
 
 ## Features
 
 - NextJs
 - SEO & Analytics
 - UI with PandaCss and Storybook
+- ContentLayer
 
 ### SEO
 
-NextJs 13.4 has SEO features, see [SEO & Metadata](#seo-and-metadata)
+NextJs 13.4 has SEO features, see [SEO & Metadata](#seo-and-metadata) We use
+ContentLayer to feed SEO data to NextJS
+
+- `robots.ts` and `sitemap.ts` special files
+- `api/og` route generate ogImages
+- `generateMetadata` function is used on Pages and Layout
+
+### ContentLayer
+
+[contentlayer.dev](https://contentlayer.dev/) turns your content into data (MDX,
+CMS, etc)
+
+see `content` folder for `posts` and `configs`
+
+#### Define Document Types in `contentlayer.config.ts`
+
+Defined documents:
+
+- GlobalSeo (singleton)
+  - url
+  - title, titleTemplate, description
+  - icon
+  - ogImageApi
+  - sitemapPaths
+- Author
+  - image
+  - name
+- Post
+  - author
+  - cover
+  - seo
+  - title
+  - computedFields
+    - url
+    - slug
+    - readingTime
+    - wordCount
+- Page (draft)
+- Doc (draft)
+
+Defined nested documents
+
+- SEO
+  - title, description
+  - ogImage
+  - publishedAt
+
+#### Components
+
+- `mdxComponents`: function which returns, Links and Images using Next Link and
+  Next Image Components
+- PostCard
+- PostContent
+- PostDate
+- PostCover
+
+#### Utils
+
+- `generate-metadata`: generateSiteMetadata, generatePostMetadata
+- `posts`: getSlugs, getSortedPosts, getPost
+
+#### Tools & Plugins
+
+- reading-time
+- rehype-highlight
+- remark-gfm
 
 ### UI
 
@@ -311,7 +379,6 @@ loading, and not the entire page.
 - [images](https://nextjs.org/docs/app/building-your-application/optimizing/images)
 - [fonts](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
 - [scripts](https://nextjs.org/docs/app/building-your-application/optimizing/scripts)
-
 - [static-assets](https://nextjs.org/docs/app/building-your-application/optimizing/static-assets)
 - [lazy-loading](https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading)
 - [analytics](https://nextjs.org/docs/app/building-your-application/optimizing/analytics)

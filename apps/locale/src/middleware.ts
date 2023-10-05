@@ -2,6 +2,7 @@ import createMiddleware from "next-intl/middleware";
 
 import { defaultLocale, locales, pathnames } from "./navigation";
 
+// TODO get data from ContentLayer config
 export default createMiddleware({
 	// Used when no locale matches
 	defaultLocale,
